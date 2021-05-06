@@ -697,32 +697,7 @@ def convertdatetime(string): #string
 		return datetime.date(year,month,day)
 	return None
 
-<<<<<<< HEAD
-'''
-def scrape_wiki(wikiurl, datecolumnname, tableindex=0, topic=1):
-	df = wiki2artifacts(url=wikiurl, tableindex=tableindex, topicid=topic, datecolumnname=datecolumnname) #returns a df
-	#df.to_sql(topic, index=False, if_exists='append', con=db.session)
-	for index, row in df.iterrows():
-		title=row['title']
-		date=row['date']
-		#date=datetime.strptime(date, '%m/%d/%Y')
-		#date = convertdatetime(date)
-		date=anystring2date(date)
-		if date==None:
-			continue
-			# ^ No date represented (probably just a header row)
-		
-		description=row['description']
-		url=row['url']
-		atopic=row['atopic']
-		
-		artifact = Artifact(title=title, date=date, description=description, url=url, atopic=atopic)
-		db.session.add(artifact)
-		db.session.commit()
-'''
-=======
 
->>>>>>> 3295fade30984c6ec7ab2a20ecb143e82a2fe001
 		
 def addtopic(title):
 	new_topic = Topic(title=title)
@@ -732,25 +707,7 @@ def addtopic(title):
 	tid = Topic.query.filter(Topic.title==title).first().tid
 	return tid
 	
-<<<<<<< HEAD
-'''
-def quicktopic(topicname, wikiurl, datecolumnname, tableindex=0):
-	topic=None
-	if not Topic.query.filter(Topic.title==topicname).count():
-		topic = addtopic(topicname)
-		autostyle(topic_name=topicname, topic_index=topic)
-	else:
-		print("Looks like the thing is already there, in the Topic table.")
-		topic = Topic.query.filter(Topic.title==topicname).first().tid
-	scrape_wiki(wikiurl=wikiurl, tableindex=tableindex, topic=topic, datecolumnname=datecolumnname)
-			# ^ Remember that topic goes into this function as the id number.
-'''			
 
-=======
-	
-
-			
->>>>>>> 3295fade30984c6ec7ab2a20ecb143e82a2fe001
 @app.route('/about')
 def about():
 	return render_template('about.html')
