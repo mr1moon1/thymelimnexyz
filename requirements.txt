@@ -17,8 +17,4 @@ scipy
 bs4
 gunicorn
 flask_mail
-<<<<<<< HEAD
 flask_bcrypt
-=======
-flask_bcrypt
->>>>>>> 3295fade30984c6ec7ab2a20ecb143e82a2fe001
