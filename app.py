@@ -813,9 +813,4 @@ def editartifact_page(artifactId):
 db.create_all()
 from resetemail import *
 if __name__ == '__main__':
-<<<<<<< HEAD
 	app.run(debug=True, host='0.0.0.0')
-=======
-	app.run(debug=True, host='0.0.0.0')
-	
->>>>>>> 3295fade30984c6ec7ab2a20ecb143e82a2fe001
